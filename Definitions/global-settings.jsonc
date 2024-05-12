@@ -5,7 +5,7 @@
         {
             "pacSelector": "tenant",
             "cloud": "AzureCloud",
-            "tenantId ": "679761e2-ffc2-4942-a4c0-70d1aa60ae1a",
+            "tenantId": "679761e2-ffc2-4942-a4c0-70d1aa60ae1a",
             "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/uhlv",
             "desiredState": {
                 "strategy": "ownedOnly", // ownedOnly or full
@@ -16,7 +16,7 @@
         {
             "pacSelector": "epac-dev",
             "cloud": "AzureCloud",
-            "tenantId ": "679761e2-ffc2-4942-a4c0-70d1aa60ae1a",
+            "tenantId": "679761e2-ffc2-4942-a4c0-70d1aa60ae1a",
             "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/uhlv-dev",
             "desiredState": {
                 "strategy": "ownedOnly", // ownedOnly or full
