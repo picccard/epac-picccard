@@ -1,0 +1,30 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/global-settings-schema.json",
+    "pacOwnerId": "69e7886a-0ea2-485b-8d4e-3c547f0d1d57", // New-Guid
+    "pacEnvironments": [
+        {
+            "pacSelector": "tenant",
+            "cloud": "AzureCloud",
+            "tenantId ": "679761e2-ffc2-4942-a4c0-70d1aa60ae1a",
+            "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/uhlv",
+            "desiredState": {
+                "strategy": "ownedOnly", // ownedOnly or full
+                "keepDfcSecurityAssignments": false // false or true
+            },
+            "managedIdentityLocation": "norwayeast"
+        },
+        {
+            "pacSelector": "epac-dev",
+            "cloud": "AzureCloud",
+            "tenantId ": "679761e2-ffc2-4942-a4c0-70d1aa60ae1a",
+            "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/uhlv-dev",
+            "desiredState": {
+                "strategy": "ownedOnly", // ownedOnly or full
+                "keepDfcSecurityAssignments": false // false or true
+            },
+            "managedIdentityLocation": "norwayeast"
+        }
+    ],
+    
+    "telemetryOptOut": true
+}
