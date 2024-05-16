@@ -30,12 +30,12 @@
                 */
             },
             "parameters": {
-                /* "AllowedLocations": [
-                  "centralus",
-                  "eastus",
-                  "eastus2",
-                  "southcentralus"
-                ] */
+                "effect": "Deny",
+                "excludedSubnets": [
+                    "GatewaySubnet",
+                    "AzureFirewallSubnet",
+                    "AzureFirewallManagementSubnet"
+                ]
             },
             "nonComplianceMessages": [
                 {
