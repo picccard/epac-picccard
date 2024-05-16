@@ -1,0 +1,48 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
+    "nodeName": "/IntermediateRoot/",
+    "scope": {
+        "epac-dev": [
+            "/providers/Microsoft.Management/managementGroups/uhlv-dev"
+        ],
+        "tenant": [
+            "/providers/Microsoft.Management/managementGroups/uhlv"
+        ]
+    },
+    "children": [
+        {
+            "nodeName": "/Deny-Subnet-Without-Nsg",
+            "assignment": {
+                "name": "Deny-Subnet-Without-Nsg",
+                "displayName": "Deny-Subnet-Without-Nsg",
+                "description": "Subnets must have a nsg"
+            },
+            "metadata": {},
+            "enforcementMode": "Default", // Default or DoNotEnforce. DoNotEnforce allows a what-if analysis. enforcementMode may appear anywhere in the tree.
+            "definitionEntry": {
+                // "displayName": "Deny-Subnet-Without-Nsg (use if policyName is GUID)",
+                "policyName": "Deny-Subnet-Without-Nsg"
+                /*
+                  policyName - custom Policy. Specifying just the name allows EPAC to inject the correct definition scope.
+                  policySetName - custom Policy Set. Specifying just the name allows EPAC to inject the correct definition scope
+                  policyId - resource id for builtin Policy.
+                  policySetId - resource id for builtin Policy Set.
+                */
+            },
+            "parameters": {
+                /* "AllowedLocations": [
+                  "centralus",
+                  "eastus",
+                  "eastus2",
+                  "southcentralus"
+                ] */
+            },
+            "nonComplianceMessages": [
+                {
+                    "message": "Subnets must have a nsg"
+                    // Default nonComplianceMessage
+                }
+            ]
+        }
+    ]
+}
