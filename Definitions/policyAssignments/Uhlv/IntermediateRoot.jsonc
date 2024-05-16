@@ -21,7 +21,7 @@
             "enforcementMode": "Default", // Default or DoNotEnforce. DoNotEnforce allows a what-if analysis. enforcementMode may appear anywhere in the tree.
             "definitionEntry": {
                 // "displayName": "Deny-Subnet-Without-Nsg (use if policyName is GUID)",
-                "policyName": "Deny-Subnet-Without-Nsg"
+                "policyName": "Deny-Subnet-Without-Nsg-duplicate"
                 /*
                   policyName - custom Policy. Specifying just the name allows EPAC to inject the correct definition scope.
                   policySetName - custom Policy Set. Specifying just the name allows EPAC to inject the correct definition scope
