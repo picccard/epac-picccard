@@ -9,7 +9,11 @@
             "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/uhlv",
             "desiredState": {
                 "strategy": "ownedOnly", // ownedOnly or full
-                "keepDfcSecurityAssignments": false // false or true
+                "keepDfcSecurityAssignments": false, // false or true
+                "excludedScopes": [],
+                "excludedPolicyDefinitions": [],
+                "excludedPolicySetDefinitions": [],
+                "excludedPolicyAssignments": []
             },
             "managedIdentityLocation": "norwayeast"
         },
@@ -20,11 +24,14 @@
             "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/uhlv-dev",
             "desiredState": {
                 "strategy": "ownedOnly", // ownedOnly or full
-                "keepDfcSecurityAssignments": false // false or true
+                "keepDfcSecurityAssignments": false, // false or true
+                "excludedScopes": [],
+                "excludedPolicyDefinitions": [],
+                "excludedPolicySetDefinitions": [],
+                "excludedPolicyAssignments": []
             },
             "managedIdentityLocation": "norwayeast"
         }
     ],
-    
     "telemetryOptOut": true
 }
