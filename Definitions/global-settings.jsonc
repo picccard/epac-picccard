@@ -31,6 +31,21 @@
                 "excludedPolicyAssignments": []
             },
             "managedIdentityLocation": "norwayeast"
+        },
+        {
+            "pacSelector": "eul-alz",
+            "cloud": "AzureCloud",
+            "tenantId": "679761e2-ffc2-4942-a4c0-70d1aa60ae1a",
+            "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/eul",
+            "desiredState": {
+                "strategy": "ownedOnly", // ownedOnly or full
+                "keepDfcSecurityAssignments": false, // false or true
+                "excludedScopes": [],
+                "excludedPolicyDefinitions": [],
+                "excludedPolicySetDefinitions": [],
+                "excludedPolicyAssignments": []
+            },
+            "managedIdentityLocation": "norwayeast"
         }
     ],
     "telemetryOptOut": true
