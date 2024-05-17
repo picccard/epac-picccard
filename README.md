@@ -1,3 +1,10 @@
+# Resources
+- [Reasons to use EPAC](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/policy-management/enterprise-policy-as-code#reasons-to-use-epac)
+  > *You have a team that's not responsible for infrastructure deployment, for example a security team that might want to deploy and manage policies.*
+- [What does policy-driven governance mean, and how does it work?](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/faq#what-does-policy-driven-governance-mean-and-how-does-it-work)
+- [Advanced Azure Policy management](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/policy-management/enterprise-policy-as-code)
+- [Testing approach for Azure landing zones](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/testing-approach)
+
 # How this repo was constructed
 
 ```pwsh
@@ -19,16 +26,16 @@ cd $repoName
 New-HydrationDefinitionFolder -DefinitionsRootFolder Definitions
 mkdir '.\Definitions\policyExemptions'
 
-cd ..\enterprise-azure-policy-as-code\
+
 $PipelinesFromStarterKitSplat = @{
-   StarterKitFolder = '.\StarterKit'
-   PipelinesFolder = "..\$repoName\.github\workflows"
+   StarterKitFolder = '..\enterprise-azure-policy-as-code\StarterKit'
+   PipelinesFolder = '.\.github\workflows'
    PipelineType = 'GitHubActions'
    BranchingFlow = 'GitHub'
    ScriptType = 'module'
 }
-New-PipelinesFromStarterKit  @PipelinesFromStarterKitSplat
-cd "..\$repoName"
+New-PipelinesFromStarterKit @PipelinesFromStarterKitSplat
+
 
 Sync-ALZPolicies -DefinitionsRootFolder .\Definitions
 
@@ -55,7 +62,14 @@ Copy-Item @copySplat2
 ```
 
 ## Next steps
-Now open `Definitions\policyAssignments\Uhlv\IntermediateRoot.jsonc` and update the content there. See docs [https://azure.github.io/enterprise-azure-policy-as-code/policy-definitions/](https://azure.github.io/enterprise-azure-policy-as-code/policy-definitions/)
+
+Now open and update the content in
+
+|   |   |
+|---|---|
+|`Definitions\global-settings.jsonc`| [*global-settings docs*](https://azure.github.io/enterprise-azure-policy-as-code/settings-global-setting-file/) |
+| `Definitions\policyAssignments\<orgShortName>\IntermediateRoot.jsonc` | [*policy-assignments docs*](https://azure.github.io/enterprise-azure-policy-as-code/policy-assignments/) |
+
 
 ### Initiate the repo and push it wherever you'd like!
 - `git init -b main`
