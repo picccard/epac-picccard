@@ -21,9 +21,9 @@
                 "description": "Subnets must have a nsg"
             },
             "metadata": {},
-            "enforcementMode": "Default", // Default or DoNotEnforce. DoNotEnforce allows a what-if analysis. enforcementMode may appear anywhere in the tree.
+            "enforcementMode": "Default", // Default or DoNotEnforce. DoNotEnforce allows a what-if analysis.
             "definitionEntry": {
-                "displayName": "Deny-Subnet-Without-Nsg (use if policyName is GUID)", // displayName has no meaning - it is for readability only
+                "displayName": "", // has no meaning, is only for readability when policyName is GUID
                 "policyName": "Deny-Subnet-Without-Nsg-duplicate"
                 /*
                   policyName - custom Policy. Specifying just the name allows EPAC to inject the correct definition scope.
