@@ -7,6 +7,9 @@
         ],
         "tenant": [
             "/providers/Microsoft.Management/managementGroups/uhlv"
+        ],
+        "eul-alz": [
+            "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742"
         ]
     },
     "children": [
@@ -20,7 +23,7 @@
             "metadata": {},
             "enforcementMode": "Default", // Default or DoNotEnforce. DoNotEnforce allows a what-if analysis. enforcementMode may appear anywhere in the tree.
             "definitionEntry": {
-                // "displayName": "Deny-Subnet-Without-Nsg (use if policyName is GUID)",
+                "displayName": "Deny-Subnet-Without-Nsg (use if policyName is GUID)", // displayName has no meaning - it is for readability only
                 "policyName": "Deny-Subnet-Without-Nsg-duplicate"
                 /*
                   policyName - custom Policy. Specifying just the name allows EPAC to inject the correct definition scope.
