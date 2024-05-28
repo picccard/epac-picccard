@@ -1,0 +1,25 @@
+{
+    "nodeName": "/diag-nic",
+    "definitionEntry": {
+        "policyName": "Deploy-Diagnostics-NIC-duplicate"
+    },
+    "assignment": {
+        "name": "Deploy-Diagnostics-NIC",
+        "displayName": "Deploy-Diagnostics-NIC",
+        "description": "Deploy Diagnostic Settings for Network Interfaces to Log Analytics workspace"
+    },
+    "metadata": {},
+    "enforcementMode": "Default",
+    "parameters": {
+        "logAnalytics": "/subscriptions/978d6a5f-34d9-4cf2-bd29-760003786953/resourceGroups/rg-eul-logging/providers/Microsoft.OperationalInsights/workspaces/log-eul-analytics-workspace",
+        "effect": "DeployIfNotExists",
+        "profileName": "setbypolicy",
+        "metricsEnabled": "True"
+
+    },
+    "scope": {
+        "eul-alz": [
+            "/providers/Microsoft.Management/managementGroups/eul" // , "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742"
+        ]
+    }
+}
