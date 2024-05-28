@@ -25,8 +25,8 @@ jobs:
     with:
       pacEnvironmentSelector: 'eul-alz'
       planGitHubEnvironment: TENANT-PLAN
-      PAC_OUTPUT_FOLDER: ./Output
-      PAC_DEFINITIONS_FOLDER: ./Definitions
+      PAC_OUTPUT_FOLDER: ${{ env.PAC_OUTPUT_FOLDER }}
+      PAC_DEFINITIONS_FOLDER: ${{ env.PAC_DEFINITIONS_FOLDER }}
     secrets: inherit
 
   deployPolicy:
@@ -37,8 +37,8 @@ jobs:
     with:
       pacEnvironmentSelector: 'eul-alz'
       planGitHubEnvironment: TENANT-DEPLOY-POLICY
-      PAC_INPUT_FOLDER: "$(GITHUB_WORKSPACE)/plans-eul-alz"
-      PAC_DEFINITIONS_FOLDER: ./Definitions
+      PAC_INPUT_FOLDER: ${{ env.PAC_OUTPUT_FOLDER }}
+      PAC_DEFINITIONS_FOLDER: ${{ env.PAC_DEFINITIONS_FOLDER }}
     secrets: inherit
 
   deployRoles:
@@ -49,6 +49,6 @@ jobs:
     with:
       pacEnvironmentSelector: 'eul-alz'
       planGitHubEnvironment: TENANT-DEPLOY-ROLES
-      PAC_INPUT_FOLDER: "$(GITHUB_WORKSPACE)/plans-eul-alz"
-      PAC_DEFINITIONS_FOLDER: ./Definitions
+      PAC_INPUT_FOLDER: ${{ env.PAC_OUTPUT_FOLDER }}
+      PAC_DEFINITIONS_FOLDER: ${{ env.PAC_DEFINITIONS_FOLDER }}
     secrets: inherit
