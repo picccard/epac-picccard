@@ -40,6 +40,8 @@ jobs:
       PAC_INPUT_FOLDER: "$env:GITHUB_WORKSPACE"
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
+    env:
+      ZZZ_CUSTOM_VAR: ${{ github.workspace }}
 
   deployRoles:
     name: Deploy tenant Role Changes
