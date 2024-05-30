@@ -37,7 +37,7 @@ jobs:
     with:
       pacEnvironmentSelector: 'eul-alz'
       planGitHubEnvironment: TENANT-DEPLOY-POLICY
-      PAC_INPUT_FOLDER: "$env:GITHUB_WORKSPACE"
+      PAC_INPUT_FOLDER: "$env:GITHUB_WORKSPACE" # ${{ env.GITHUB_WORKSPACE }}
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
 
