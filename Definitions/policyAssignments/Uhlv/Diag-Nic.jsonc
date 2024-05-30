@@ -1,12 +1,12 @@
 {
-    "nodeName": "/deploy-diagnostics-nic",
+    "nodeName": "/deploy-diag-nic",
     "definitionEntry": {
         "policyName": "Deploy-Diagnostics-NIC-duplicate"
     },
     "assignment": {
         "name": "Deploy-Diagnostics-NIC",
         "displayName": "Deploy-Diagnostics-NIC",
-        "description": "Deploy Diagnostic Settings for Network Interfaces to Log Analytics workspace"
+        "description": "Deploy Diagnostic Settings for NIC to Log Analytics workspace"
     },
     "metadata": {},
     "enforcementMode": "Default",

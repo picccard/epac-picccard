@@ -37,7 +37,7 @@ jobs:
     with:
       pacEnvironmentSelector: 'eul-alz'
       planGitHubEnvironment: TENANT-DEPLOY-POLICY
-      PAC_INPUT_FOLDER: '.'
+      PAC_INPUT_FOLDER: ./Output2
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
 
@@ -49,6 +49,6 @@ jobs:
     with:
       pacEnvironmentSelector: 'eul-alz'
       planGitHubEnvironment: TENANT-DEPLOY-ROLES
-      PAC_INPUT_FOLDER: '.'
+      PAC_INPUT_FOLDER: ./Output2
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
