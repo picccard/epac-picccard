@@ -1,5 +1,5 @@
 {
-    "nodeName": "/deploy-diagnostics-nic",
+    "nodeName": "/deploy-diag-nic",
     "definitionEntry": {
         "policyName": "Deploy-Diagnostics-NIC-duplicate"
     },
