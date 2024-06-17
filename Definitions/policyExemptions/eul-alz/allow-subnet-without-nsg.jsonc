@@ -2,11 +2,19 @@
     "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-exemption-schema.json",
     "exemptions": [
         {
-            "name": "Allow-Subnet-Without-Nsg",
+            "name": "56b095bc-05d0-47bb-8c7a-2499a79e8295",
             "displayName": "Allow-Subnet-Without-Nsg",
             "description": "Subnets in rg [rg-exemption-policy-nsg-subnet] is allowed to exist without a nsg",
             "policyAssignmentId": "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742/providers/microsoft.authorization/policyassignments/deny-subnet-without-nsg",
             "scope": "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742/resourceGroups/rg-exemption-policy-nsg-subnet",
+            "exemptionCategory": "Waiver"
+        },
+        {
+            "name": "d54269db-6f39-4981-afee-3bcf54fb88c7",
+            "displayName": "Allow-Subnet-Without-Nsg Resource [vnet-eul-hub-norwayeast]",
+            "description": "Subnets in rg [rg-exemption-policy-nsg-subnet] is allowed to exist without a nsg",
+            "policyAssignmentId": "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742/providers/microsoft.authorization/policyassignments/deny-subnet-without-nsg",
+            "scope": "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742/resourceGroups/rg-eul-connectivity/providers/Microsoft.Network/virtualNetworks/vnet-eul-hub-norwayeast",
             "exemptionCategory": "Waiver"
         }
     ]
