@@ -1,14 +1,13 @@
 {
   "properties": {
     "policyType": "Custom",
-    "displayName": "[Deprecated]: Deploy SQL Database built-in SQL security configuration",
-    "description": "Deploy auditing, Alert, TDE and SQL vulnerability to SQL Databases when it not exist in the deployment. Superseded by https://www.azadvertizer.net/azpolicyinitiativesadvertizer/Deploy-Sql-Security_20240529.html",
+    "displayName": "Deploy SQL Database built-in SQL security configuration",
+    "description": "Deploy auditing, Alert, TDE and SQL vulnerability to SQL Databases when it not exist in the deployment",
     "metadata": {
-      "version": "1.0.0-deprecated",
+      "version": "1.0.0",
       "category": "SQL",
       "source": "https://github.com/Azure/Enterprise-Scale/",
-      "deprecated": true,
-      "supersededBy": "Deploy-Sql-Security_20240529",
+      "replacesPolicy": "Deploy-Sql-Security",
       "alzCloudEnvironments": [
         "AzureCloud",
         "AzureChinaCloud",
@@ -21,7 +20,7 @@
           "description": "The email address to send alerts",
           "displayName": "The email address to send alerts"
         },
-        "type": "String"
+        "type": "Array"
       },
       "vulnerabilityAssessmentsStorageID": {
         "metadata": {
@@ -124,10 +123,10 @@
           }
         },
         "groupNames": [],
-        "policyDefinitionName": "Deploy-Sql-vulnerabilityAssessments"
+        "policyDefinitionName": "Deploy-Sql-vulnerabilityAssessments_20230706"
       }
     ],
     "policyDefinitionGroups": null
   },
-  "name": "Deploy-Sql-Security"
+  "name": "Deploy-Sql-Security_20240529"
 }

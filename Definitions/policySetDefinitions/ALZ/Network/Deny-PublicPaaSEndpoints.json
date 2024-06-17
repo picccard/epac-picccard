@@ -1,11 +1,10 @@
 {
-  "name": "Deny-PublicPaaSEndpoints",
   "properties": {
     "policyType": "Custom",
     "displayName": "Public network access should be disabled for PaaS services",
     "description": "This policy initiative is a group of policies that prevents creation of Azure PaaS services with exposed public endpoints",
     "metadata": {
-      "version": "3.2.0",
+      "version": "5.1.0",
       "category": "Network",
       "source": "https://github.com/Azure/Enterprise-Scale/",
       "alzCloudEnvironments": [
@@ -17,7 +16,7 @@
         "type": "String",
         "metadata": {
           "displayName": "Public network access should be disabled for CosmosDB",
-          "description": "This policy denies that  Cosmos database accounts  are created with out public network access is disabled."
+          "description": "This policy denies that Cosmos database accounts  are created with out public network access is disabled."
         },
         "allowedValues": [
           "Audit",
@@ -82,7 +81,7 @@
         "type": "String",
         "metadata": {
           "displayName": "Public network access on Azure Container Registry disabled",
-          "description": "This policy denies the creation of Azure Container Registires with exposed public endpoints "
+          "description": "This policy denies the creation of Azure Container Registries with exposed public endpoints "
         },
         "allowedValues": [
           "Audit",
@@ -108,7 +107,20 @@
         "type": "String",
         "metadata": {
           "displayName": "Public network access should be disabled for PostgreSql Flexible Server",
-          "description": "This policy denies creation of Postgre SQL Flexible DB accounts with exposed public endpoints"
+          "description": "This policy denies creation of PostgreSQL Flexible DB accounts with exposed public endpoints"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      },
+      "postgreSqlPublicNetworkAccess": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Public network access should be disabled for PostgreSQL servers",
+          "description": "This policy denies creation of PostgreSQL DB accounts with exposed public endpoints"
         },
         "allowedValues": [
           "Audit",
@@ -186,7 +198,7 @@
         "type": "String",
         "metadata": {
           "displayName": "Public network access should be disabled for Bot Service",
-          "description": "This policy denies creation of Bot Service with exposed public endpoints. Bots should be seet to 'isolated only' mode"
+          "description": "This policy denies creation of Bot Service with exposed public endpoints. Bots should be set to 'isolated only' mode"
         },
         "allowedValues": [
           "Audit",
@@ -199,7 +211,7 @@
         "type": "String",
         "metadata": {
           "displayName": "Public network access should be disabled for Automation accounts",
-          "description": "This policy denies creation of Automation accounts with exposed public endpoints. Bots should be seet to 'isolated only' mode"
+          "description": "This policy denies creation of Automation accounts with exposed public endpoints. Bots should be set to 'isolated only' mode"
         },
         "allowedValues": [
           "Audit",
@@ -222,6 +234,19 @@
         "defaultValue": "Deny"
       },
       "FunctionPublicIpDenyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Public network access should be disabled for Function apps",
+          "description": "This policy denies creation of Function apps with exposed public endpoints"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      },
+      "FunctionAppSlotPublicIpDenyEffect": {
         "type": "String",
         "metadata": {
           "displayName": "Public network access should be disabled for Function apps",
@@ -284,6 +309,207 @@
           "Disabled"
         ],
         "defaultValue": "Deny"
+      },
+      "AsrVaultDenyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Azure Recovery Services vaults should disable public network access",
+          "description": "This policy denies creation of Azure Recovery Services vaults with exposed public endpoints"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      },
+      "logicAppPublicNetworkAccessEffect": {
+        "type": "String",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      },
+      "appSlotsPublicNetworkAccess": {
+        "type": "string",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      },
+      "cognitiveSearchPublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "managedDiskPublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ]
+      },
+      "containerAppsPublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "adxPublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "adfPublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "eventGridPublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "eventGridTopicPublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "eventHubNamespacesPublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "keyVaultManagedHsmDisablePublicNetwork": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "mySqlPublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "cognitiveServicesNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "cognitiveServicesPublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "serviceBusDisablePublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "sqlManagedPublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "storageAccountsPublicAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "synapsePublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "avdHostPoolPublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "avdWorkspacePublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "grafanaPublicNetworkAccess": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
       }
     },
     "policyDefinitions": [
@@ -366,6 +592,16 @@
         },
         "groupNames": [],
         "policyDefinitionName": "5e1de0e3-42cb-4ebc-a86d-61d0c619ca48"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-PostgreSql-Public-Network-Access",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('postgreSqlPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "b52376f7-9612-48a1-81cd-1ffe4b61032c"
       },
       {
         "policyDefinitionReferenceId": "MySQLFlexDenyPublicIP",
@@ -458,6 +694,16 @@
         "policyDefinitionName": "969ac98b-88a8-449f-883c-2e9adb123127"
       },
       {
+        "policyDefinitionReferenceId": "FunctionAppSlotsDenyPublicIP",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('FunctionAppSlotPublicIpDenyEffect')]"
+          }
+        },
+        "groupNames": [],
+        "policyDefinitionName": "11c82d0c-db9f-4d7b-97c5-f3f9aa957da2"
+      },
+      {
         "policyDefinitionReferenceId": "AseDenyPublicIP",
         "parameters": {
           "effect": {
@@ -496,8 +742,229 @@
         },
         "groupNames": [],
         "policyDefinitionName": "d074ddf8-01a5-4b5e-a2b8-964aed452c0a"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-ContainerApps-Public-Network-Access",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('containerAppsPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "783ea2a8-b8fd-46be-896a-9ae79643a0b1"
+      },
+      {
+        "policyDefinitionReferenceId": "AsrVaultDenyPublicIP",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('AsrVaultDenyEffect')]"
+          }
+        },
+        "groupNames": [],
+        "policyDefinitionName": "9ebbbba3-4d65-4da9-bb67-b22cfaaff090"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-LogicApp-Public-Network-Access",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('logicAppPublicNetworkAccessEffect')]"
+          }
+        },
+        "policyDefinitionName": "Deny-LogicApp-Public-Network"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-AppSlots-Public",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('appSlotsPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "701a595d-38fb-4a66-ae6d-fb3735217622"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-CognitiveSearch-PublicEndpoint",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('cognitiveSearchPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "ee980b6d-0eca-4501-8d54-f6290fd512c3"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-ManagedDisk-Public-Network-Access",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('managedDiskPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "8405fdab-1faf-48aa-b702-999c9c172094"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-ADX-Public-Network-Access",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('adxPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "43bc7be6-5e69-4b0d-a2bb-e815557ca673"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Adf-Public-Network-Access",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('adfPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "1cf164be-6819-4a50-b8fa-4bcaa4f98fb6"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-EventGrid-Public-Network-Access",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('eventGridPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "f8f774be-6aee-492a-9e29-486ef81f3a68"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-EventGrid-Topic-Public-Network-Access",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('eventGridTopicPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "1adadefe-5f21-44f7-b931-a59b54ccdb45"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-EH-Public-Network-Access",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('eventHubNamespacesPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "0602787f-9896-402a-a6e1-39ee63ee435e"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-KV-Hms-PublicNetwork",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('keyVaultManagedHsmDisablePublicNetwork')]"
+          }
+        },
+        "policyDefinitionName": "19ea9d63-adee-4431-a95e-1913c6c1c75f"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-MySql-Public-Network-Access",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('mySqlPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "d9844e8a-1437-4aeb-a32c-0c992f056095"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Cognitive-Services-Public-Network-Access",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('cognitiveServicesPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "0725b4dd-7e76-479c-a735-68e7ee23d5ca"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Cognitive-Services-Network-Access",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('cognitiveServicesNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "037eea7a-bd0a-46c5-9a66-03aea78705d3"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Sb-PublicEndpoint",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('serviceBusDisablePublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "cbd11fd3-3002-4907-b6c8-579f0e700e13"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Sql-Managed-Public-Endpoint",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('sqlManagedPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "9dfea752-dd46-4766-aed1-c355fa93fb91"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Storage-Public-Access",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('storageAccountsPublicAccess')]"
+          }
+        },
+        "policyDefinitionName": "4fa4b6c0-31ca-4c0d-b10d-24b96f62a751"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Synapse-Public-Network-Access",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('synapsePublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "38d8df46-cf4e-4073-8e03-48c24b29de0d"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Workspace-PublicNetworkAccess",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('avdWorkspacePublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "87ac3038-c07a-4b92-860d-29e270a4f3cd"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Hostpool-PublicNetworkAccess",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('avdHostPoolPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "c25dcf31-878f-4eba-98eb-0818fdc6a334"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Grafana-PublicNetworkAccess",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('grafanaPublicNetworkAccess')]"
+          }
+        },
+        "policyDefinitionName": "e8775d5a-73b7-4977-a39b-833ef0114628"
       }
     ],
     "policyDefinitionGroups": null
-  }
+  },
+  "name": "Deny-PublicPaaSEndpoints"
 }
