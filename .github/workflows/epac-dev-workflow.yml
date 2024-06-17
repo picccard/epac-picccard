@@ -19,46 +19,46 @@ permissions:
   id-token: write
 
 jobs:
-  plan:
-    name: Plan epac-dev
-    uses: ./.github/workflows/plan.yml
-    with:
-      pacEnvironmentSelector: epac-dev
-      planGitHubEnvironment: PAC-DEV
-      PAC_OUTPUT_FOLDER: ./Output
-      PAC_DEFINITIONS_FOLDER: ./Definitions
-    secrets: inherit
+  # plan:
+  #   name: Plan epac-dev
+  #   uses: ./.github/workflows/plan.yml
+  #   with:
+  #     pacEnvironmentSelector: epac-dev
+  #     planGitHubEnvironment: PAC-DEV
+  #     PAC_OUTPUT_FOLDER: ./Output
+  #     PAC_DEFINITIONS_FOLDER: ./Definitions
+  #   secrets: inherit
 
-  deployPolicy:
-    name: Deploy epac-dev Policy Changes
-    needs: plan
-    if: needs.plan.outputs.deployPolicyChanges == 'yes'
-    uses: ./.github/workflows/deploy-policy.yml
-    with:
-      pacEnvironmentSelector: epac-dev
-      planGitHubEnvironment: PAC-DEV
-      PAC_INPUT_FOLDER: ./Output
-      PAC_DEFINITIONS_FOLDER: ./Definitions
-    secrets: inherit
+  # deployPolicy:
+  #   name: Deploy epac-dev Policy Changes
+  #   needs: plan
+  #   if: needs.plan.outputs.deployPolicyChanges == 'yes'
+  #   uses: ./.github/workflows/deploy-policy.yml
+  #   with:
+  #     pacEnvironmentSelector: epac-dev
+  #     planGitHubEnvironment: PAC-DEV
+  #     PAC_INPUT_FOLDER: ./Output
+  #     PAC_DEFINITIONS_FOLDER: ./Definitions
+  #   secrets: inherit
 
-  deployRoles:
-    name: Deploy epac-dev Role Changes
-    needs: plan
-    if: needs.plan.outputs.deployRoleChanges == 'yes'
-    uses: ./.github/workflows/deploy-roles.yml
-    with:
-      pacEnvironmentSelector: epac-dev
-      planGitHubEnvironment: PAC-DEV
-      PAC_INPUT_FOLDER: ./Output
-      PAC_DEFINITIONS_FOLDER: ./Definitions
-    secrets: inherit
-
+  # deployRoles:
+  #   name: Deploy epac-dev Role Changes
+  #   needs: plan
+  #   if: needs.plan.outputs.deployRoleChanges == 'yes'
+  #   uses: ./.github/workflows/deploy-roles.yml
+  #   with:
+  #     pacEnvironmentSelector: epac-dev
+  #     planGitHubEnvironment: PAC-DEV
+  #     PAC_INPUT_FOLDER: ./Output
+  #     PAC_DEFINITIONS_FOLDER: ./Definitions
+  #   secrets: inherit
+  
   tenantPlan:
     name: Plan tenant
-    needs: [deployPolicy, deployRoles]
+    # needs: [deployPolicy, deployRoles]
     uses: ./.github/workflows/plan.yml
     with:
-      pacEnvironmentSelector: tenant
+      pacEnvironmentSelector: 'eul-alz'
       planGitHubEnvironment: TENANT-PLAN
       PAC_OUTPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./Definitions
