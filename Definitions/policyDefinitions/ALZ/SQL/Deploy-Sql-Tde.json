@@ -1,5 +1,4 @@
 {
-  "name": "Deploy-Sql-Tde",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -119,5 +118,6 @@
         }
       }
     }
-  }
+  },
+  "name": "Deploy-Sql-Tde"
 }

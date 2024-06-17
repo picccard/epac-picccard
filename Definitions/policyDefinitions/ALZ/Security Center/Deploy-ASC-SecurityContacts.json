@@ -1,12 +1,11 @@
 {
-  "name": "Deploy-ASC-SecurityContacts",
   "properties": {
     "policyType": "Custom",
     "mode": "All",
     "displayName": "Deploy Microsoft Defender for Cloud Security Contacts",
     "description": "Deploy Microsoft Defender for Cloud Security Contacts",
     "metadata": {
-      "version": "1.1.0",
+      "version": "2.0.0",
       "category": "Security Center",
       "source": "https://github.com/Azure/Enterprise-Scale/",
       "alzCloudEnvironments": [
@@ -17,14 +16,14 @@
     },
     "parameters": {
       "emailSecurityContact": {
-        "type": "string",
+        "type": "String",
         "metadata": {
           "displayName": "Security contacts email address",
-          "description": "Provide email address for Azure Security Center contact details"
+          "description": "Provide email addresses (semi-colon separated) for Defender for Cloud contact details"
         }
       },
       "effect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "DeployIfNotExists",
         "allowedValues": [
           "DeployIfNotExists",
@@ -36,7 +35,7 @@
         }
       },
       "minimalSeverity": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "High",
         "allowedValues": [
           "High",
@@ -74,20 +73,12 @@
                 "contains": "[parameters('emailSecurityContact')]"
               },
               {
-                "field": "Microsoft.Security/securityContacts/alertNotifications.minimalSeverity",
+                "field": "Microsoft.Security/securityContacts/isEnabled",
+                "equals": true
+              },
+              {
+                "field": "Microsoft.Security/securityContacts/notificationsSources[*].Alert.minimalSeverity",
                 "contains": "[parameters('minimalSeverity')]"
-              },
-              {
-                "field": "type",
-                "equals": "Microsoft.Security/securityContacts"
-              },
-              {
-                "field": "Microsoft.Security/securityContacts/alertNotifications",
-                "equals": "On"
-              },
-              {
-                "field": "Microsoft.Security/securityContacts/alertsToAdmins",
-                "equals": "On"
               }
             ]
           },
@@ -125,19 +116,22 @@
                   {
                     "type": "Microsoft.Security/securityContacts",
                     "name": "default",
-                    "apiVersion": "2020-01-01-preview",
+                    "apiVersion": "2023-12-01-preview",
                     "properties": {
                       "emails": "[parameters('emailSecurityContact')]",
+                      "isEnabled": true,
                       "notificationsByRole": {
                         "state": "On",
                         "roles": [
                           "Owner"
                         ]
                       },
-                      "alertNotifications": {
-                        "state": "On",
-                        "minimalSeverity": "[parameters('minimalSeverity')]"
-                      }
+                      "notificationsSources": [
+                        {
+                          "sourceType": "Alert",
+                          "minimalSeverity": "[parameters('minimalSeverity')]"
+                        }
+                      ]
                     }
                   }
                 ],
@@ -148,5 +142,6 @@
         }
       }
     }
-  }
+  },
+  "name": "Deploy-ASC-SecurityContacts"
 }

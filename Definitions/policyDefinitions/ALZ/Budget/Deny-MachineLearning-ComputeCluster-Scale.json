@@ -1,5 +1,4 @@
 {
-  "name": "Deny-MachineLearning-ComputeCluster-Scale",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -85,5 +84,6 @@
         "effect": "[parameters('effect')]"
       }
     }
-  }
+  },
+  "name": "Deny-MachineLearning-ComputeCluster-Scale"
 }

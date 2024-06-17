@@ -1,5 +1,4 @@
 {
-  "name": "Deploy-Windows-DomainJoin",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -254,5 +253,6 @@
         }
       }
     }
-  }
+  },
+  "name": "Deploy-Windows-DomainJoin"
 }

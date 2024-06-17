@@ -1,5 +1,4 @@
 {
-  "name": "DenyAction-ActivityLogs",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -31,5 +30,6 @@
         }
       }
     }
-  }
+  },
+  "name": "DenyAction-ActivityLogs"
 }

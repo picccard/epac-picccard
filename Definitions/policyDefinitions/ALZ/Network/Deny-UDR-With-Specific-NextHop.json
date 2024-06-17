@@ -1,5 +1,4 @@
 {
-  "name": "Deny-UDR-With-Specific-NextHop",
   "properties": {
     "policyType": "Custom",
     "mode": "All",
@@ -80,5 +79,6 @@
         "effect": "[parameters('effect')]"
       }
     }
-  }
+  },
+  "name": "Deny-UDR-With-Specific-NextHop"
 }

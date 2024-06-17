@@ -1,5 +1,4 @@
 {
-  "name": "Deny-Redis-http",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -68,5 +67,6 @@
         "effect": "[parameters('effect')]"
       }
     }
-  }
+  },
+  "name": "Deny-Redis-http"
 }

@@ -1,5 +1,4 @@
 {
-  "name": "Deploy-VNET-HubSpoke",
   "properties": {
     "policyType": "Custom",
     "mode": "All",
@@ -302,5 +301,6 @@
         }
       }
     }
-  }
+  },
+  "name": "Deploy-VNET-HubSpoke"
 }

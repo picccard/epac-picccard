@@ -1,5 +1,4 @@
 {
-  "name": "Deny-AppGW-Without-WAF",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -47,5 +46,6 @@
         "effect": "[parameters('effect')]"
       }
     }
-  }
+  },
+  "name": "Deny-AppGW-Without-WAF"
 }

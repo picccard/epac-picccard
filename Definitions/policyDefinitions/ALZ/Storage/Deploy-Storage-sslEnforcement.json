@@ -1,5 +1,4 @@
 {
-  "name": "Deploy-Storage-sslEnforcement",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -131,5 +130,6 @@
         }
       }
     }
-  }
+  },
+  "name": "Deploy-Storage-sslEnforcement"
 }

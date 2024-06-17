@@ -1,5 +1,4 @@
 {
-  "name": "Audit-AzureHybridBenefit",
   "properties": {
     "policyType": "Custom",
     "displayName": "Audit AHUB for eligible VMs",
@@ -81,5 +80,6 @@
         "effect": "[parameters('effect')]"
       }
     }
-  }
+  },
+  "name": "Audit-AzureHybridBenefit"
 }
