@@ -4,7 +4,7 @@
         {
             "name": "56b095bc-05d0-47bb-8c7a-2499a79e8295",
             "displayName": "Allow-Subnet-Without-Nsg",
-            "description": "Subnets in rg [rg-exemption-policy-nsg-subnet] is allowed to exist without a nsg",
+            "description": "Subnets in rg [rg-exemption-policy-nsg-subnet] are allowed to exist without a nsg",
             "policyAssignmentId": "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742/providers/microsoft.authorization/policyassignments/deny-subnet-without-nsg",
             "scope": "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742/resourceGroups/rg-exemption-policy-nsg-subnet",
             "exemptionCategory": "Waiver"
@@ -12,10 +12,23 @@
         {
             "name": "d54269db-6f39-4981-afee-3bcf54fb88c7",
             "displayName": "Allow-Subnet-Without-Nsg Resource [vnet-eul-hub-norwayeast]",
-            "description": "Subnets in rg [rg-exemption-policy-nsg-subnet] is allowed to exist without a nsg",
+            "description": "Subnets in vnet [vnet-eul-hub-norwayeast] is allowed to exist without a nsg",
             "policyAssignmentId": "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742/providers/microsoft.authorization/policyassignments/deny-subnet-without-nsg",
             "scope": "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742/resourceGroups/rg-eul-connectivity/providers/Microsoft.Network/virtualNetworks/vnet-eul-hub-norwayeast",
             "exemptionCategory": "Waiver"
-        }
+        },
+        {
+            "name": "d48ba5a5-e5c2-4bd1-8320-38f5ef7130c9",
+            "displayName": "Allow-Subnet-Without-Nsg",
+            "description": "Subnets are allowed to exist without a nsg",
+            "policyAssignmentId": "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742/providers/microsoft.authorization/policyassignments/deny-subnet-without-nsg",
+            "scopes": [
+                "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742/resourceGroups/rg-exemption1",
+                "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742/resourceGroups/rg-exemption2",
+                "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742/resourceGroups/rg-eul-connectivity/providers/Microsoft.Network/virtualNetworks/vnet-exemption1",
+                "/subscriptions/cf0d4e9c-55bc-4ce7-9b57-b6746db10742/resourceGroups/rg-eul-connectivity/providers/Microsoft.Network/virtualNetworks/vnet-exemption2"
+            ],
+            "exemptionCategory": "Waiver"
+        },
     ]
 }
