@@ -1,5 +1,4 @@
 {
-  "name": "Append-AppService-latestTLS",
   "properties": {
     "policyType": "Custom",
     "mode": "All",
@@ -65,5 +64,6 @@
         ]
       }
     }
-  }
+  },
+  "name": "Append-AppService-latestTLS"
 }

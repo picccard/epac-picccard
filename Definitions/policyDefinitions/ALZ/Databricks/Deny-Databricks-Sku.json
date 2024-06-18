@@ -1,5 +1,4 @@
 {
-  "name": "Deny-Databricks-Sku",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -45,5 +44,6 @@
         "effect": "[parameters('effect')]"
       }
     }
-  }
+  },
+  "name": "Deny-Databricks-Sku"
 }

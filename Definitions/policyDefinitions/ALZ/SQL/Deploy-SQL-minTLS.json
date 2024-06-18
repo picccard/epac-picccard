@@ -1,5 +1,4 @@
 {
-  "name": "Deploy-SQL-minTLS",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -118,5 +117,6 @@
         }
       }
     }
-  }
+  },
+  "name": "Deploy-SQL-minTLS"
 }

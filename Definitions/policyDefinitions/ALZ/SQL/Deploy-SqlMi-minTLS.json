@@ -1,5 +1,4 @@
 {
-  "name": "Deploy-SqlMi-minTLS",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -119,5 +118,6 @@
         }
       }
     }
-  }
+  },
+  "name": "Deploy-SqlMi-minTLS"
 }

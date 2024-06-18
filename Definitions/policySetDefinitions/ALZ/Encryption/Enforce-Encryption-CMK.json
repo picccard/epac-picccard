@@ -1,11 +1,10 @@
 {
-  "name": "Enforce-Encryption-CMK",
   "properties": {
     "policyType": "Custom",
     "displayName": "Deny or Audit resources without Encryption with a customer-managed key (CMK)",
     "description": "Deny or Audit resources without Encryption with a customer-managed key (CMK)",
     "metadata": {
-      "version": "2.0.0",
+      "version": "3.0.0",
       "category": "Encryption",
       "source": "https://github.com/Azure/Enterprise-Scale/",
       "alzCloudEnvironments": [
@@ -19,7 +18,7 @@
           "description": "Use customer-managed keys to manage the encryption at rest of the contents of your registries. By default, the data is encrypted at rest with service-managed keys, but customer-managed keys (CMK) are commonly required to meet regulatory compliance standards. CMKs enable the data to be encrypted with an Azure Key Vault key created and owned by you. You have full control and responsibility for the key lifecycle, including rotation and management. Learn more about CMK encryption at https://aka.ms/acr/CMK."
         },
         "type": "String",
-        "defaultValue": "Audit",
+        "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
           "Deny",
@@ -32,7 +31,7 @@
           "description": "Encrypting OS and data disks using customer-managed keys provides more control and greater flexibility in key management. This is a common requirement in many regulatory and industry compliance standards."
         },
         "type": "String",
-        "defaultValue": "Audit",
+        "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
           "Deny",
@@ -41,7 +40,7 @@
       },
       "WorkspaceCMKEffect": {
         "type": "String",
-        "defaultValue": "Audit",
+        "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
           "Deny",
@@ -54,7 +53,7 @@
       },
       "CognitiveServicesCMKEffect": {
         "type": "String",
-        "defaultValue": "Audit",
+        "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
           "Deny",
@@ -67,7 +66,7 @@
       },
       "CosmosCMKEffect": {
         "type": "String",
-        "defaultValue": "audit",
+        "defaultValue": "deny",
         "allowedValues": [
           "audit",
           "deny",
@@ -80,7 +79,7 @@
       },
       "DataBoxCMKEffect": {
         "type": "String",
-        "defaultValue": "Audit",
+        "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
           "Deny",
@@ -93,7 +92,7 @@
       },
       "StreamAnalyticsCMKEffect": {
         "type": "String",
-        "defaultValue": "audit",
+        "defaultValue": "deny",
         "allowedValues": [
           "audit",
           "deny",
@@ -106,7 +105,7 @@
       },
       "SynapseWorkspaceCMKEffect": {
         "type": "String",
-        "defaultValue": "Audit",
+        "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
           "Deny",
@@ -155,7 +154,7 @@
       },
       "SqlServerTDECMKEffect": {
         "type": "String",
-        "defaultValue": "Audit",
+        "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
           "Deny",
@@ -180,7 +179,7 @@
       },
       "AzureBatchCMKEffect": {
         "type": "String",
-        "defaultValue": "Audit",
+        "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
           "Deny",
@@ -202,6 +201,130 @@
           "displayName": "Disk encryption should be applied on virtual machines",
           "description": "Virtual machines without an enabled disk encryption will be monitored by Azure Security Center as recommendations."
         }
+      },
+      "AutomationAccountCmkEffect": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "BackupCmkEffect": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "cognitiveSearchCmk": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "osAndDataDiskCmk": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "containerInstanceCmk": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "adxCmk": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "adfCmk": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "eventHubNamespacesCmk": {
+        "type": "string",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ]
+      },
+      "eventHubPremiumCmk": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "serviceBusDenyCmk": {
+        "type": "string",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ]
+      },
+      "sqlManagedCmk": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "storageTableCmk": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "storageAccountsEncryptionCmk": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "storageQueueCmk": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
       }
     },
     "policyDefinitions": [
@@ -354,8 +477,149 @@
         },
         "groupNames": [],
         "policyDefinitionName": "0961003e-5a0a-4549-abde-af6a37f2724d"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Aa-Cmk",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('AutomationAccountCmkEffect')]"
+          }
+        },
+        "policyDefinitionName": "56a5ee18-2ae6-4810-86f7-18e39ce5629b"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Backup-Cmk",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('BackupCmkEffect')]"
+          }
+        },
+        "policyDefinitionName": "2e94d99a-8a36-4563-bc77-810d8893b671"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-CognitiveSearch-Cmk",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('cognitiveSearchCmk')]"
+          }
+        },
+        "policyDefinitionName": "76a56461-9dc0-40f0-82f5-2453283afa2f"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-OsAndDataDisk-Cmk",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('osAndDataDiskCmk')]"
+          }
+        },
+        "policyDefinitionName": "702dd420-7fcc-42c5-afe8-4026edd20fe0"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-ContainerInstance-Cmk",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('containerInstanceCmk')]"
+          }
+        },
+        "policyDefinitionName": "0aa61e00-0a01-4a3c-9945-e93cffedf0e6"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-ADX-Cmk",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('adxCmk')]"
+          }
+        },
+        "policyDefinitionName": "81e74cea-30fd-40d5-802f-d72103c2aaaa"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Adf-Cmk",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('adfCmk')]"
+          }
+        },
+        "policyDefinitionName": "4ec52d6d-beb7-40c4-9a9e-fe753254690e"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-EH-Cmk",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('eventHubNamespacesCmk')]"
+          }
+        },
+        "policyDefinitionName": "a1ad735a-e96f-45d2-a7b2-9a4932cab7ec"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-EH-Premium-CMK",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('eventHubPremiumCmk')]"
+          }
+        },
+        "policyDefinitionName": "Deny-EH-Premium-CMK"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Sb-Cmk",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('serviceBusDenyCmk')]"
+          }
+        },
+        "policyDefinitionName": "295fc8b1-dc9f-4f53-9c61-3f313ceab40a"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Sql-Managed-Cmk",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('sqlManagedCmk')]"
+          }
+        },
+        "policyDefinitionName": "ac01ad65-10e5-46df-bdd9-6b0cad13e1d2"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Storage-Table-Cmk",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('storageTableCmk')]"
+          }
+        },
+        "policyDefinitionName": "7c322315-e26d-4174-a99e-f49d351b4688"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Storage-Encryption-Cmk",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('storageAccountsEncryptionCmk')]"
+          }
+        },
+        "policyDefinitionName": "b5ec538c-daa0-4006-8596-35468b9148e8"
+      },
+      {
+        "policyDefinitionReferenceId": "Deny-Storage-Queue-Cmk",
+        "groupNames": [],
+        "parameters": {
+          "effect": {
+            "value": "[parameters('storageQueueCmk')]"
+          }
+        },
+        "policyDefinitionName": "f0e5abd0-2554-4736-b7c0-4ffef23475ef"
       }
     ],
     "policyDefinitionGroups": null
-  }
+  },
+  "name": "Enforce-Encryption-CMK"
 }

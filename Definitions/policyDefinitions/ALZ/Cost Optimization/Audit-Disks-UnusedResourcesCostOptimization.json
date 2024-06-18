@@ -1,5 +1,4 @@
 {
-  "name": "Audit-Disks-UnusedResourcesCostOptimization",
   "properties": {
     "policyType": "Custom",
     "displayName": "Unused Disks driving cost should be avoided",
@@ -62,5 +61,6 @@
         "effect": "[parameters('effect')]"
       }
     }
-  }
+  },
+  "name": "Audit-Disks-UnusedResourcesCostOptimization"
 }

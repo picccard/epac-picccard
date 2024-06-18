@@ -1,5 +1,4 @@
 {
-  "name": "Append-Redis-disableNonSslPort",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -56,5 +55,6 @@
         ]
       }
     }
-  }
+  },
+  "name": "Append-Redis-disableNonSslPort"
 }

@@ -1,5 +1,4 @@
 {
-  "name": "Append-AppService-httpsonly",
   "properties": {
     "policyType": "Custom",
     "mode": "All",
@@ -52,5 +51,6 @@
         ]
       }
     }
-  }
+  },
+  "name": "Append-AppService-httpsonly"
 }

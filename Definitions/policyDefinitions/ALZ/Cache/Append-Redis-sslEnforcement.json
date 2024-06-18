@@ -1,5 +1,4 @@
 {
-  "name": "Append-Redis-sslEnforcement",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -69,5 +68,6 @@
         ]
       }
     }
-  }
+  },
+  "name": "Append-Redis-sslEnforcement"
 }

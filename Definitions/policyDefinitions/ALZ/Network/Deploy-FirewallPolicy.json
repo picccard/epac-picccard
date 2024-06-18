@@ -1,5 +1,4 @@
 {
-  "name": "Deploy-FirewallPolicy",
   "properties": {
     "policyType": "Custom",
     "mode": "All",
@@ -160,5 +159,6 @@
         }
       }
     }
-  }
+  },
+  "name": "Deploy-FirewallPolicy"
 }

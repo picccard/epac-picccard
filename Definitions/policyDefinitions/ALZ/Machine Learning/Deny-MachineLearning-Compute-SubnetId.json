@@ -1,5 +1,4 @@
 {
-  "name": "Deny-MachineLearning-Compute-SubnetId",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -60,5 +59,6 @@
         "effect": "[parameters('effect')]"
       }
     }
-  }
+  },
+  "name": "Deny-MachineLearning-Compute-SubnetId"
 }

@@ -1,5 +1,4 @@
 {
-  "name": "Deny-VNET-Peering-To-Non-Approved-VNETs",
   "properties": {
     "policyType": "Custom",
     "mode": "All",
@@ -81,5 +80,6 @@
         "effect": "[parameters('effect')]"
       }
     }
-  }
+  },
+  "name": "Deny-VNET-Peering-To-Non-Approved-VNETs"
 }

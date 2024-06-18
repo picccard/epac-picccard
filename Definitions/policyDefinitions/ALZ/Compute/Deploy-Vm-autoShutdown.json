@@ -1,5 +1,4 @@
 {
-  "name": "Deploy-Vm-autoShutdown",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -189,5 +188,6 @@
         }
       }
     }
-  }
+  },
+  "name": "Deploy-Vm-autoShutdown"
 }

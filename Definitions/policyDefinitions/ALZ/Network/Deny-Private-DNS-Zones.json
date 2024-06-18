@@ -1,5 +1,4 @@
 {
-  "name": "Deny-Private-DNS-Zones",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -39,5 +38,6 @@
         "effect": "[parameters('effect')]"
       }
     }
-  }
+  },
+  "name": "Deny-Private-DNS-Zones"
 }

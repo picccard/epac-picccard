@@ -1,5 +1,4 @@
 {
-  "name": "Deploy-Diagnostics-MariaDB",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -187,5 +186,6 @@
         }
       }
     }
-  }
+  },
+  "name": "Deploy-Diagnostics-MariaDB"
 }

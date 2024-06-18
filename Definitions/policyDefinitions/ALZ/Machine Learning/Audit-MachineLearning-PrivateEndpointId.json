@@ -1,5 +1,4 @@
 {
-  "name": "Audit-MachineLearning-PrivateEndpointId",
   "properties": {
     "policyType": "Custom",
     "mode": "Indexed",
@@ -57,5 +56,6 @@
         "effect": "[parameters('effect')]"
       }
     }
-  }
+  },
+  "name": "Audit-MachineLearning-PrivateEndpointId"
 }
